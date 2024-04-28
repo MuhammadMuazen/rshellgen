@@ -25,7 +25,7 @@ avalible_payloads = ['bash-tcp', 'bash-udp', 'perl-linux', 'perl-win', 'py3-win'
                     'groovy', 'c', 'dart']
 
 def help_message():
-        print(f'''[+]Usage: {sys.argv[0]} -lh <LHOST IP> -lp <LPORT> -t <reverse shell type> [-options]\n
+        print(f'''[+] Usage: {os.path.basename(__file__)} -lh <LHOST IP> -lp <LPORT> -t <reverse shell type> [-options]\n
         options:
                 -h                  help for this script
                 -o string           output to file to write result to
@@ -55,7 +55,7 @@ def help_message():
                                     | c             | dart          |
                                     |_______________|_______________|
 
-[+]Example: {sys.argv[0]} -lh 192.168.1.2 -lp 4444 -t bash-tcp -e base64 -o reverse-shell.sh''')
+[+] Example: {os.path.basename(__file__)} -lh 192.168.1.2 -lp 4444 -t bash-tcp -e base64 -o reverse-shell.sh''')
 
 
 #function to check if the parameter is valid ip address
