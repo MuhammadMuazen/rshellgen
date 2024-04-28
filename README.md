@@ -8,7 +8,7 @@ https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-che
 ---
 ## Usage:
 ```console
-[+]Usage: ./rshellgen.py -lh <LHOST IP> -lp <LPORT> -t <reverse shell type> [-options]
+[+] Usage: rshellgen.py -lh <LHOST IP> -lp <LPORT> -t <reverse shell type> [-options]
 
         options:
                 -h                  help for this script
@@ -39,7 +39,7 @@ https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-che
                                     | c             | dart          |
                                     |_______________|_______________|
 
-[+]Example: ./rshellgen.py -lh 192.168.1.2 -lp 4444 -t bash-tcp -e base64 -o reverse-shell.sh
+[+] Example: rshellgen.py -lh 192.168.1.2 -lp 4444 -t bash-tcp -e base64 -o reverse-shell.sh
 ```
 ---
 
