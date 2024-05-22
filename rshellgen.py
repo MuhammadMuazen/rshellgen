@@ -7,7 +7,7 @@
 # If you want to add your reverse shell here are the steps:
 # 1) add the name that should be referenced in the command line in the list: avalible_payloads
 # 2) (optinal) add the name to the help message in the table
-# 3) write the function that hold the shell then in the function call the handle_payload_output function
+# 3) write the function that holds the shell then in the function call the handle_payload_output function
 # 4) add your function to the if conditions in the handle_payload_generator function
 # 5) Good luck in your journy!
 
@@ -89,9 +89,9 @@ def export_to_file(rev_shell, output_file_name):
     try:
         with open(file_path, 'w') as rev_shell_file:
             rev_shell_file.write(rev_shell)
-            print(f'[+]Saved in file: {os.path.abspath(file_path)}')
+            print(f'[+] Saved in file: {os.path.abspath(file_path)}')
     except Exception as e:
-        print(f'[-]Erro saving to a file: {e}')
+        print(f'[-] Error saving to a file: {e}')
 
 #function to handle the output of the reverse shell and prints it
 #input: shell, output_file_name and encoding_algo
@@ -99,7 +99,7 @@ def export_to_file(rev_shell, output_file_name):
 #elif output_file_name != None and encoding_algo == None --> output it to a file
 #else output_file_name == None and encoding_algo != None --> print encoded shell
 def handle_payload_output(shell, output_file_name, encoding_algo):
-    print('[+]The shell is: ')
+    print('[+] The shell is: ')
     print(shell, end='\n\n')
     try:
         if(encoding_algo == 'url'):
