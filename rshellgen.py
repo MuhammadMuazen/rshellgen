@@ -104,20 +104,20 @@ def handle_payload_output(shell, output_file_name, encoding_algo):
     try:
         if(encoding_algo == 'url'):
             url_encd_shell = url_encode(shell)
-            print('[+]The encoded shell is: ')
+            print('[+] The encoded shell is: ')
             print(url_encd_shell, end='\n\n')
             if(output_file_name):
                 export_to_file(url_encd_shell, output_file_name)
         elif(encoding_algo == 'base64'):
             base64_encd_shell = base64_encode(shell)
-            print('[+]The encoded shell is: ')
+            print('[+] The encoded shell is: ')
             print(base64_encd_shell, end='\n\n')
             if(output_file_name):
                 export_to_file(base64_encd_shell, output_file_name)
         elif((not encoding_algo) and output_file_name):
             export_to_file(shell, output_file_name)
     except Exception as e:
-        print(f'[-]Error in handling the payload output: {e}')
+        print(f'[-] Error in handling the payload output: {e}')
 
 #function to check for the name of the java class in the java reverse shells
 #input: output_file_name
