@@ -476,7 +476,7 @@ if __name__ == '__main__':
         #check if any encoding type is specified
         if('-e' in parameters):
             if(parameters[parameters.index('-e') + 1] not in ['base64', 'url']):
-                print('[-]Invalid input!')
+                print('[-] Invalid input!')
                 print("\t-e <base64, url> encode the payload in base64 OR URL encoding")
                 exit(-1)
             else:
@@ -485,5 +485,5 @@ if __name__ == '__main__':
         handle_payload_generator(lhost_ip, lport, rev_shell_type, output_file_name, encoding_algo)
 
     except Exception as e:
-        print(f'[-]Error: {e}')
+        print(f'[-] Error: {e}')
         help_message()  
