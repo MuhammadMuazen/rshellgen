@@ -18,11 +18,10 @@ import os
 import re
 
 #This list have all the avalible reverse shells names 
-avalible_payloads = ['bash-tcp', 'bash-udp', 'perl-linux', 'perl-win', 'py3-win', 'py2-win', 'py3-linux',
+avalible_payloads = ['bash-tcp', 'bash-udp', 'perl-lin', 'perl-win', 'py3-win', 'py2-win', 'py3-lin',
                     'php-exec', 'php', 'php-shellexec', 'php-system', 'php-passthru', 'php-popen',
-                    'ruby-linux', 'ruby-win', 'rust', 'go', 'powershell', 'awk', 'java-linux', 'java-thread-lin',
-                    'java-win', 'java-thread-win', 'lua-linux', 'lua-win', 'nodejs-win', 'nodejs-linux', 
-                    'groovy', 'c', 'dart']
+                    'ruby-lin', 'ruby-win', 'rust', 'go', 'powershell', 'awk', 'java-lin', 'java-thread-lin',
+                    'java-win', 'java-thread-win', 'lua-lin', 'lua-win', 'nodejs-win', 'nodejs-lin', 'c', 'dart']
 
 def help_message():
         print(f'''[+] Usage: {os.path.basename(__file__)} -lh <LHOST IP> -lp <LPORT> -t <reverse shell type> [-options]\n
@@ -32,30 +31,26 @@ def help_message():
                 -e <base64, url>    encode the payload in base64 OR URL encoding
                 
                 -t <shell type>
-
+        
     _______________________            
-   (_O_O_O_O_O_O_O_O_O_O_O_)         _______________________________
-    \/___________________\/         |                               |
-    |_____________________|         |        avalible types         |
-    | |                 | |         |_______________________________|
-    | | rshellgen By:   | |         |               |               |
-    | |                 | |         | bash-tcp      | bash-udp      |
-    | |_MuhammadMuazen__| |         | perl-linux    | perl-win      |
-    |/___________________\|         | py3-win       | py2-win       |
-                                    | py3-linux     | php-exec (php)|
-                                    | php-shellexec | php-system    |
-                                    | php-passthru  | php-popen     |
-                                    | ruby-linux    | ruby-win      |
-                                    | rust          | go            |
-                                    | powershell    | awk           |
-                                    | java-linux    |java-thread-lin|
-                                    | java-win      |java-thread-win|
-                                    | lua-linux     | lua-win       |
-                                    | nodejs-win    | nodejs-linux  |
-                                    | c             | dart          |
-                                    |_______________|_______________|
+   (_O_O_O_O_O_O_O_O_O_O_O_)         ___________________________________________________
+    \/___________________\/         |                                                   |
+    |_____________________|         |                   Avalible Types                  |   
+    | |                 | |         |___________________________________________________|
+    | | rshellgen By:   | |         |               |                   |               |
+    | |                 | |         |   powershell  |   php-system      |   py3-win     |
+    | |_MuhammadMuazen__| |         |   perl-win    |   php-popen       |   py2-win     |
+    |/___________________\|         |   perl-lin    |   php-exec (php)  |   py3-lin     |    
+                                    |   bash-tcp    |   php-passthru    |   ruby-win    |
+                                    |   bash-udp    |   php-shellexec   |   ruby-lin    |
+                                    |   rust        |   java-thread-win |   java-win    |
+                                    |   dart        |   java-thread-lin |   java-lin    |
+                                    |   awk         |   nodejs-win      |   lua-win     |
+                                    |   go          |   nodejs-lin      |   lua-lin     |
+                                    |   c           |                   |               |
+                                    |_______________|___________________|_______________|
 
-[+] Example: {os.path.basename(__file__)} -lh 192.168.1.2 -lp 4444 -t bash-tcp -e base64 -o reverse-shell.sh''')
+[+] Example: {os.path.basename(__file__)} -lh 192.168.1.2 -lp 4444 -t bash-tcp -e base64 -o reverse-shell.sh\n''')
 
 
 #function to check if the parameter is valid ip address
@@ -393,7 +388,7 @@ def handle_payload_generator(lhost_ip, lport, rev_shell_type, output_file_name =
         bash_tcp(lhost_ip , lport, output_file_name, encoding_algo)
     elif(rev_shell_type == 'bash-udp'):
         bash_udp(lhost_ip, lport, output_file_name, encoding_algo)
-    elif(rev_shell_type == 'perl-linux'):
+    elif(rev_shell_type == 'perl-lin'):
         perl_linux(lhost_ip, lport, output_file_name, encoding_algo)
     elif(rev_shell_type == 'perl-win'):
         perl_win(lhost_ip, lport, output_file_name, encoding_algo)
@@ -401,7 +396,7 @@ def handle_payload_generator(lhost_ip, lport, rev_shell_type, output_file_name =
         py3_win(lhost_ip, lport, output_file_name, encoding_algo)
     elif(rev_shell_type == 'py2-win'):
         py2_win(lhost_ip, lport, output_file_name, encoding_algo)
-    elif(rev_shell_type == 'py3-linux'):
+    elif(rev_shell_type == 'py3-lin'):
         py3_linux(lhost_ip, lport, output_file_name, encoding_algo)
     elif(rev_shell_type == 'php-exec' or rev_shell_type == 'php'):
         php_exec(lhost_ip, lport, output_file_name, encoding_algo)
@@ -413,7 +408,7 @@ def handle_payload_generator(lhost_ip, lport, rev_shell_type, output_file_name =
         php_passthru(lhost_ip, lport, output_file_name, encoding_algo)
     elif(rev_shell_type == 'php-popen'):
         php_popen(lhost_ip, lport, output_file_name, encoding_algo)
-    elif(rev_shell_type == 'ruby-linux'):
+    elif(rev_shell_type == 'ruby-lin'):
         ruby_linux(lhost_ip, lport, output_file_name, encoding_algo)
     elif(rev_shell_type == 'ruby-win'):
         ruby_win(lhost_ip, lport, output_file_name, encoding_algo)
@@ -425,7 +420,7 @@ def handle_payload_generator(lhost_ip, lport, rev_shell_type, output_file_name =
         powershell_shell(lhost_ip, lport, output_file_name, encoding_algo)
     elif(rev_shell_type == 'awk'):
         awk_shell(lhost_ip, lport, output_file_name, encoding_algo)
-    elif(rev_shell_type == 'java-linux'):
+    elif(rev_shell_type == 'java-lin'):
         java_linux_shell(lhost_ip, lport, output_file_name, encoding_algo)
     elif(rev_shell_type == 'java-win'):
         java_win_shell(lhost_ip, lport, output_file_name, encoding_algo)
@@ -433,11 +428,11 @@ def handle_payload_generator(lhost_ip, lport, rev_shell_type, output_file_name =
         java_thread_linux_shell(lhost_ip, lport, output_file_name, encoding_algo)
     elif(rev_shell_type == 'java-thread-win'):
         java_thread_win_shell(lhost_ip, lport, output_file_name, encoding_algo)
-    elif(rev_shell_type == 'lua-linux'):
+    elif(rev_shell_type == 'lua-lin'):
         lua_linux_shell(lhost_ip, lport, output_file_name, encoding_algo)
     elif(rev_shell_type == 'lua-win'):
         lua_win_shell(lhost_ip, lport, output_file_name, encoding_algo)
-    elif(rev_shell_type == 'nodejs-linux'):
+    elif(rev_shell_type == 'nodejs-lin'):
         nodejs_linux_shell(lhost_ip, lport, output_file_name, encoding_algo)
     elif(rev_shell_type == 'nodejs-win'):
         nodejs_win_shell(lhost_ip, lport, output_file_name, encoding_algo)
