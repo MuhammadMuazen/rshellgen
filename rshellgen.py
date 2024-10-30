@@ -24,7 +24,7 @@ avalible_payloads = ['bash-tcp', 'bash-udp', 'perl-lin', 'perl-win', 'py3-win', 
                     'java-win', 'java-thread-win', 'lua-lin', 'lua-win', 'nodejs-win', 'nodejs-lin', 'c', 'dart']
 
 def help_message():
-        print(f'''[+] Usage: {os.path.basename(__file__)} -lh <LHOST IP> -lp <LPORT> -t <reverse shell type> [-options]\n
+        print(f'''\n[+] Usage: {os.path.basename(__file__)} -lh <LHOST IP> -lp <LPORT> -t <reverse shell type> [-options]\n
         options:
                 -h                  help for this script
                 -o string           output to file to write result to
@@ -34,13 +34,13 @@ def help_message():
         
     _______________________            
    (_O_O_O_O_O_O_O_O_O_O_O_)         ___________________________________________________
-    \/___________________\/         |                                                   |
+    \\/___________________\\/         |                                                   |
     |_____________________|         |                   Avalible Types                  |   
     | |                 | |         |___________________________________________________|
     | | rshellgen By:   | |         |               |                   |               |
     | |                 | |         |   powershell  |   php-system      |   py3-win     |
     | |_MuhammadMuazen__| |         |   perl-win    |   php-popen       |   py2-win     |
-    |/___________________\|         |   perl-lin    |   php-exec (php)  |   py3-lin     |    
+    |/___________________\\|         |   perl-lin    |   php-exec (php)  |   py3-lin     |    
                                     |   bash-tcp    |   php-passthru    |   ruby-win    |
                                     |   bash-udp    |   php-shellexec   |   ruby-lin    |
                                     |   rust        |   java-thread-win |   java-win    |
