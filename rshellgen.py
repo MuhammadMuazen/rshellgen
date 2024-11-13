@@ -446,29 +446,29 @@ if __name__ == '__main__':
         help_message()
         exit(-1)
     try:
-        #remove all the spaces from the arguments
+        # Remove all the spaces from the arguments
         parameters = [i.strip(' ') for i in sys.argv[1:]]
 
-        #get the local host ip and check if valid
+        # Get the local host ip and check if valid
         if(is_valid_ip(parameters[parameters.index('-lh') + 1])):
             lhost_ip = parameters[parameters.index('-lh') + 1]
 
-        #get the local port and check if valid
+        # Get the local port and check if valid
         if(parameters[parameters.index('-lp') + 1].isdigit()):
             lport = parameters[parameters.index('-lp') + 1]
 
-        #get the payload type and check if valid
+        # Get the payload type and check if valid
         if(parameters[parameters.index('-t') + 1] in avalible_payloads):
             rev_shell_type = parameters[parameters.index('-t') + 1]
 
         output_file_name = None
         encoding_algo = None    
         
-        #check if output file is specified
+        # Check if output file is specified
         if('-o' in parameters):
             output_file_name = parameters[parameters.index('-o') + 1]
 
-        #check if any encoding type is specified
+        # Check if any encoding type is specified
         if('-e' in parameters):
             if(parameters[parameters.index('-e') + 1] not in ['base64', 'url']):
                 print('[-] Invalid input!')
@@ -476,7 +476,8 @@ if __name__ == '__main__':
                 exit(-1)
             else:
                 encoding_algo = parameters[parameters.index('-e') + 1]
-
+        
+        # Generate the shell payload
         handle_payload_generator(lhost_ip, lport, rev_shell_type, output_file_name, encoding_algo)
 
     except Exception as e:
